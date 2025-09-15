@@ -1,0 +1,106 @@
+/* Estilos para a loja de móveis */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}   
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.product {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+}
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+.product h2 {
+    margin: 10px 0;
+}
+.product p {
+    color: #888888;
+}
+.product .price {
+    color: #e8491d;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+.product button {
+    background: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.product button:hover {
+    background: #e8491d;
+}
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+footer p {
+    margin: 0;
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+@media (max-width: 480px) {
+    .product {
+        margin: 10px 0;
+        padding: 5px;
+    }
+    .product h2 {
+        font-size: 1.2em;
+    }
+    .product .price {
+        font-size: 1em;
+    }
+}
+@media (max-width: 320px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+}
+/* tira os pontos das ul */
+ul {
+    list-style: none;
+    padding: 0;
+}

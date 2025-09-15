@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de móveis</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        //adiciona evento de pop up de boas vindas quando entra na pagina
+        window.onload = function() {
+            alert("Bem-vindo à nossa loja de móveis!");
+        };
+        //adiciona um evento de quando passar o mouse em cima do titulo ele mudar de tamanho 50px
+        document.addEventListener("DOMContentLoaded", function() {
+            const title = document.querySelector("h1");
+            title.addEventListener("mouseover", function() {
+                title.style.fontSize = "50px";
+            });
+            title.addEventListener("mouseout", function() {
+                title.style.fontSize = "";
+            });
+        }); 
+        //adiciona um evento de quando clicar em um item do menu ele mostrar um alerta com o nome do item clicado
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuItems = document.querySelectorAll("nav ul li a");
+            menuItems.forEach(function(item) {
+                item.addEventListener("click", function(event) {
+                    event.preventDefault(); // Evita o comportamento padrão do link
+                    alert("Você clicou em: " + item.textContent);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à nossa loja de móveis!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#products">Produtos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+    <main></main>
+        <section id="home">
+            <h2>Início</h2>
+            <p>Bem-vindo à nossa loja de móveis!</p>
+        </section>
+        <section id="products">
+            <h2>Produtos</h2>
+            <ul>
+                <li>Sofá</li>
+                <li>Mesa</li>
+                <li>Cadeira</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco pelo e-mail: contato@lojademoveis.com</p>
+        </section>
+    </main>
+    <footer></footer>
+        <p>&copy; 2023 Loja de Móveis. Todos os direitos reservados.</p>
+    </footer>
+
+    
+</body>
+</html>
