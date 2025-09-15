@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista-tarefas</title>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        h1{
+            text-align: center;
+        }
+        .container {
+            background-color: gray;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 5px;
+
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        button{
+            width: 150px;
+            height: 36px;
+            border-radius: 5px;
+            border: none;
+            background-color: lightblue;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+    <div class="container">
+        <form action="submit">
+            <input type="text" id="taskinput" placeholder="Digite uma tarefa">
+            <button id="addtask">Adicionar Tarefa</button>
+        </form>
+        <ul id="tasklist"></ul>
+    
+        <script>
+            const taskInput = document.getElementById('taskinput');
+            const addTaskButton = document.getElementById('addtask');
+            const taskList = document.getElementById('tasklist');
+
+            function handleAddTask(event) {
+                event.preventDefault(); // Evita o envio do formulário
+                addTaskButton.addEventListener('click', handleAddTask);
+                const taskText = taskInput.value.trim();
+                if (taskText != ''){
+                    const listItem = document.createElement('li');
+                    listItem.textContent = taskText;
+                    taskList.appendChild(listItem);
+                    taskInput.value = '';
+                    listItem.addEventListener('click', function() {
+                        listItem.style.textDecoration = 'line-through';
+                    });
+                    listItem.addEventListener('dblclick', function() {
+                        taskList.removeChild(listItem);
+                    });} 
+                    
+                
+                    
+
+                }
+                addTaskButton.addEventListener('click', handleAddTask);
+
+            
+
+        </script>
+    </div>
+</body>
+</html>
