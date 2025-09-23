@@ -1,0 +1,25 @@
+/* faz um relogio de parede bonito e redondo */
+#relogio {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 80px;
+  color: #333;
+  background: #f0f0f0;
+  border: 8px solid #333;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+}
+body {
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
