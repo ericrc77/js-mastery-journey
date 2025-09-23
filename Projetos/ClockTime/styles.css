@@ -1,25 +1,21 @@
-/* faz um relogio de parede bonito e redondo */
-#relogio {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 80px;
-  color: #333;
-  background: #f0f0f0;
-  border: 8px solid #333;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 50px auto;
-}
+/* adiciona o estilo de um relogio digtal moderno */
 body {
-  background: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5em;
 }
+#relogio {
+    padding: 20px 40px;
+    border: 5px solid #61dafb;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+    background-color: #20232a;
+}
+
+
 
