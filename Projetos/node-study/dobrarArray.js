@@ -13,7 +13,7 @@ function dobrado() {
 
 console.log(dobrado());
 
-// versao simples
+// versão simples
 let arr = [1, 2, 3];
 let dobrador = arr.map(x => x * 2);
 console.log(dobrador);
