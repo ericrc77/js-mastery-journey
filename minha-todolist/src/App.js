@@ -1,21 +1,30 @@
 import { useState } from "react";
 
-export default App;
-
-
 function App() {
   const [tarefas, setTarefas] = useState([]); // lista de tarefas
   const [novaTarefa, setNovaTarefa] = useState(""); // texto do input
 
   const adicionarTarefa = () => {
-    if (novaTarefa.trim() === "") return; // não adiciona vazio
-    setTarefas([...tarefas, novaTarefa]); // adiciona a nova tarefa
-    setNovaTarefa(""); // limpa o input
+    if (novaTarefa.trim() === "") return;
+    setTarefas([...tarefas, { texto: novaTarefa, concluida: false }]);
+    setNovaTarefa("");
+  };
+
+  const removerTarefa = (index) => {
+    setTarefas(tarefas.filter((_, i) => i !== index));
+  };
+
+  const alternarConcluida = (index) => {
+    setTarefas(
+      tarefas.map((tarefa, i) =>
+        i === index ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
+      )
+    );
   };
 
   return (
-    <div>
-      <h1>To-do Minimal</h1>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>To-Do List Minimal React</h1>
       <input
         type="text"
         value={novaTarefa}
@@ -24,13 +33,40 @@ function App() {
       />
       <button onClick={adicionarTarefa}>Adicionar</button>
 
-      <ul>
+      <ul style={{ listStyle: "none", padding: 0, marginTop: "20px" }}>
         {tarefas.map((tarefa, index) => (
-          <li key={index}>{tarefa}</li>
+          <li
+            key={index}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "300px",
+              margin: "5px auto",
+              padding: "10px",
+              border: "1px solid #ccc",
+              textDecoration: tarefa.concluida ? "line-through" : "none",
+              color: tarefa.concluida ? "gray" : "black",
+              cursor: "pointer",
+            }}
+          >
+            <span onClick={() => alternarConcluida(index)}>{tarefa.texto}</span>
+            <button
+              onClick={() => removerTarefa(index)}
+              style={{
+                background: "red",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                padding: "5px 10px",
+              }}
+            >
+              X
+            </button>
+          </li>
         ))}
       </ul>
     </div>
   );
 }
 
-
+export default App;
